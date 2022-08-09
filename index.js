@@ -16,9 +16,9 @@ process.env.TZ = 'Asia/Kolkata';
 
 // parse urlencoded request body
 app.use(express.urlencoded({ extended: true }));
-let db = process.env.mongoConnectionString || 'mongodb+srv://admin:1234@cluster0.u1a2b.mongodb.net/HRBuddy'
+
 mongoose
-	.connect(db, {
+	.connect(process.env.mongoConnectionString, {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
 	})
